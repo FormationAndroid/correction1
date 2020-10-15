@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.testapp.fragments.AboutFragment
 import com.example.testapp.fragments.QuestionsFragment
 import com.example.testapp.fragments.SettingsFragment
@@ -15,20 +16,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
     }
 
     fun menuClick(view: View) {
-        when (view.id){
-            R.id.btnQuestions -> changeFragment(QuestionsFragment())
-            R.id.btnSettings -> changeFragment(SettingsFragment())
-            R.id.btnAbout -> changeFragment(AboutFragment())
-        }
+        findNavController(R.id.fragNav).navigate(
+                when (view.id){
+                    R.id.btnQuestions -> R.id.questionsFragment
+                    R.id.btnSettings -> R.id.settingsFragment
+                   else -> R.id.aboutFragment
+                }
+        )
     }
-
-    fun changeFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
-    }
-
 
 }

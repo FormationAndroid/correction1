@@ -39,14 +39,15 @@
         app:layout_constraintStart_toEndOf="@+id/btnSettings"
         app:layout_constraintTop_toTopOf="@+id/btnSettings" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <fragment
+        android:id="@+id/fragNav"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:navGraph="@navigation/nav_graph"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSettings">
+        app:layout_constraintTop_toBottomOf="@+id/btnSettings"/>
 
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

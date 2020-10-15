@@ -18,13 +18,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
-            if (editPassword.text.toString() == "pass"){
-                startActivity(Intent(applicationContext, MainActivity::class.java))
-                finish()
-            }
-            else{
-                Toast.makeText(applicationContext, "Mot de passe invalide", Toast.LENGTH_SHORT).show()
-            }
+            startActivity(Intent(applicationContext, MainActivity::class.java))
+            finish()
         }
 
     }
