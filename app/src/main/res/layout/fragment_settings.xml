@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".fragments.QuestionsFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchNightMode"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SETTINGS"
+        android:text="Mode nuit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
